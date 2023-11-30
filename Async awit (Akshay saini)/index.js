@@ -50,9 +50,18 @@
 
 async function getData() {
     console.log("Fetching data!!!");
-    const data = await fetch("https://api.github.com/users/jaymindarji2003");
-    console.log("Data fetched successfully");
-    console.log(data);
+
+    try {
+        const data = await fetch("https://api.github.com/users/jaymindarji2003");
+        const dataJson = await data.json();
+        console.log("Data fetched successfully");
+        console.log(data);
+        console.log(dataJson);
+    }
+    catch (error) {
+        console.log("error while fetching data!!!");
+        console.log(error.message);
+    }
 }
 
 getData()
