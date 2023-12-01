@@ -43,6 +43,7 @@ const startChangingColor = function () {
 
 const stopChangingColor = function () {
     clearInterval(changeColor);
+    changeColor = null;
     console.log("stoping color change");
 }
 
